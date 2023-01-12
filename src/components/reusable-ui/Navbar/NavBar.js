@@ -14,7 +14,6 @@ export default function NavBar() {
 
 const NavBarStyled = styled.div`
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin: 40px 100px;
+  margin-bottom: 10px;
 `;

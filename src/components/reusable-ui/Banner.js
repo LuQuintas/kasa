@@ -6,19 +6,25 @@ export default function Banner({ image, texte }) {
     <BannerStyled>
       <img src={image} alt="Bannière" />
       <div className="bg-dark"></div>
-      <span>{texte}</span>
+      <div className="containerText">
+        <span>{texte}</span>
+      </div>
     </BannerStyled>
   );
 }
 
 const BannerStyled = styled.div`
-  width: 1240px;
-  height: 223px;
-  margin: 0px 100px;
+  position: relative;
+  width: 100%;
+  height: 111px;
+
   img {
     position: absolute;
-    border-radius: 25px;
+    border-radius: 10px;
     z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   .bg-dark {
     background-color: black;
@@ -27,21 +33,38 @@ const BannerStyled = styled.div`
     z-index: 1;
     mix-blend-mode: darken;
     opacity: 30%;
-    border-radius: 25px;
+    border-radius: 10px;
   }
-  span {
+  .containerText {
     position: absolute;
-    left: 25.9%;
-    right: 25.14%;
-    top: 24.32%;
-    bottom: 69.04%;
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 48px;
-    line-height: 142.6%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
     display: flex;
-    align-items: flex-end;
-    color: #ffffff;
+    padding-left: 20px;
+    align-items: center;
+
+    span {
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      color: #ffffff;
+      width: 217px;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    height: 223px;
+    .containerText {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      span {
+        width: 100%;
+        font-size: 48px;
+      }
+    }
   }
 `;

@@ -16,15 +16,23 @@ export default function NavBarRightSide() {
 }
 
 const NavBarRightSideStyled = styled.div`
+  display: flex;
+  align-items: center;
+
   a {
     text-decoration: none;
     font-family: "Monserrat", Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 24px;
+    font-size: 12px;
     font-weight: 500;
+    margin-left: 20px;
     color: #ff6060;
-    margin-left: 57px;
-    :hover {
+    /* margin-left: 57px; */
+    :hover,
+    :focus {
       text-decoration: underline;
+    }
+    @media screen and (min-width: 768px) {
+      font-size: 24px;
     }
   }
 `;

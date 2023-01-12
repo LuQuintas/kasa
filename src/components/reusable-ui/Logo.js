@@ -1,9 +1,16 @@
 import React from "react";
+import styled from "styled-components";
 
 export default function Logo() {
   return (
-    <div>
+    <LogoStyled>
       <img src="/images/logo.png" alt="Logo de kasa" />
-    </div>
+    </LogoStyled>
   );
 }
+
+const LogoStyled = styled.div`
+  img {
+    width: 80%;
+  }
+`;
