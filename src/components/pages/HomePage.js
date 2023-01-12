@@ -1,4 +1,3 @@
-import React from "react";
 import Banner from "../reusable-ui/Banner";
 import NavBar from "../reusable-ui/Navbar/NavBar";
 import BannerHome from "../../assets/BannerHome.png";
