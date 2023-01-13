@@ -1,10 +1,11 @@
 import NavBar from "../reusable-ui/Navbar/NavBar";
+import Main from "./Main";
 
-export default function Logements() {
+export default function Logement() {
   return (
     <div>
       <NavBar />
-      <h1>Logements</h1>
+      <Main />
     </div>
   );
 }
