@@ -21,7 +21,6 @@ const NavBarRightSideStyled = styled.div`
 
   a {
     text-decoration: none;
-    font-family: "Monserrat", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 12px;
     font-weight: 500;
     margin-left: 20px;

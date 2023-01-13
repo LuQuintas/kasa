@@ -1,5 +1,6 @@
 .App {
   text-align: center;
-  /* width:1490px; */
+  font-family: "Monserrat", Tahoma, Geneva, Verdana, sans-serif;
+max-width: 1440PX;
 }
 

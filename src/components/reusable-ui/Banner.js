@@ -17,6 +17,7 @@ const BannerStyled = styled.div`
   position: relative;
   width: 100%;
   height: 111px;
+  margin-bottom: 20px;
 
   img {
     position: absolute;
@@ -56,6 +57,7 @@ const BannerStyled = styled.div`
   }
 
   @media screen and (min-width: 769px) {
+    margin-top: 40px;
     height: 223px;
     .containerText {
       justify-content: center;
