@@ -43,6 +43,8 @@ const CardStyled = styled.div`
     .card {
       margin-bottom: 20px;
       border-radius: 10px;
+      width: 335px;
+      height: 255px;
     }
     img {
       border-radius: 10px;

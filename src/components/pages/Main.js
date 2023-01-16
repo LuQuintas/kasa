@@ -6,7 +6,9 @@ export default function Main() {
   return (
     <MainStyled>
       {DatasLogements.map((produit) => {
-        return <Card title={produit.title} image={produit.cover} />;
+        return (
+          <Card key={produit.id} title={produit.title} image={produit.cover} />
+        );
       })}
       <Card />
     </MainStyled>
@@ -22,4 +24,9 @@ const MainStyled = styled.div`
   background: #f6f6f6;
   padding-top: 56px;
   margin-top: 23px;
+  @media screen and (max-width: 768px) {
+    background: white;
+    padding-top: 0;
+    margin-top: 0;
+  }
 `;
