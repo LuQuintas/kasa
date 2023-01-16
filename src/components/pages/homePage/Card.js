@@ -16,7 +16,7 @@ export default function Card({ id, title, image }) {
 const CardStyled = styled.div`
   .card {
     position: relative;
-    margin-bottom: 50px;
+    margin: 50px;
     width: 340px;
     height: 340px;
 

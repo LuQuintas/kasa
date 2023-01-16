@@ -12,10 +12,13 @@ export default function NavBar() {
 }
 
 const NavBarStyled = styled.div`
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-top: 40px;
+  /* margin: auto; */
+  max-width: 1440px;
   img {
-    width: 45%;
+    width: 25%;
   }
 `;

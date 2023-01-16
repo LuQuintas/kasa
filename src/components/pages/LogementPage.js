@@ -1,11 +1,9 @@
-import NavBar from "../reusable-ui/Navbar/NavBar";
-import Main from "./Main";
+import NavBar from "../layout/navbar/NavBar";
 
 export default function Logement() {
   return (
     <div>
       <NavBar />
-      <Main />
     </div>
   );
 }

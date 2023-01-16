@@ -4,25 +4,25 @@ import LogoFooter from "../../assets/images/LogoFooter.png";
 export default function Footer() {
   return (
     <FooterStyled>
-      <div className="trademark">
-        <img src={LogoFooter} alt="" />
-      </div>
-      <span>&copy; 2020 Kasa. Allrights reserved</span>
+      <img src={LogoFooter} alt="" />
+      <span>&copy; kasa. All rights reserved</span>
     </FooterStyled>
   );
 }
 
 const FooterStyled = styled.div`
-  width: 100%;
-  height: 209px;
   display: flex;
-  margin: auto;
   flex-direction: column;
-  justify-content: space-evenly;
+  margin-top: 20px;
   align-items: center;
+  justify-content: space-evenly;
   background: black;
-
-  span {
-    color: white;
+  color: white;
+  max-width: 100%;
+  height: 209px;
+  width: 100%;
+  img {
+    width: 122px;
+    height: 40px;
   }
 `;

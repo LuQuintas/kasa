@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 export default function Banner({ image, texte }) {
@@ -22,7 +21,6 @@ const BannerStyled = styled.div`
   img {
     position: absolute;
     border-radius: 10px;
-    z-index: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;

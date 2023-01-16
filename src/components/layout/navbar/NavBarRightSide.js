@@ -25,7 +25,6 @@ const NavBarRightSideStyled = styled.div`
     font-weight: 500;
     margin-left: 20px;
     color: #ff6060;
-    /* margin-left: 57px; */
     :hover,
     :focus {
       text-decoration: underline;
