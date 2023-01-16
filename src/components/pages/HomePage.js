@@ -3,6 +3,7 @@ import NavBar from "../reusable-ui/Navbar/NavBar";
 import BannerHome from "../../assets/BannerHome.png";
 import styled from "styled-components";
 import Main from "./Main";
+import Footer from "../reusable-ui/Navbar/Footer";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <NavBar />
       <Banner image={BannerHome} texte="Chez vous, partout et ailleurs" />
       <Main />
+      <Footer />
     </HomeStyled>
   );
 }
