@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export default function Card({ id, title, image }) {
+export default function Card({ id, title, image, onclick }) {
   return (
-    <CardStyled>
+    <CardStyled onClick={onclick}>
       <div className="card" id={id}>
         <div className="image">
           <img src={image} alt="" />
@@ -19,17 +19,12 @@ const CardStyled = styled.div`
     margin: 50px;
     width: 340px;
     height: 340px;
-
-    .image {
-      /* width: 100%;
-      height: 100%; */
-      img {
-        position: absolute;
-        border-radius: 25px;
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-      }
+    img {
+      position: absolute;
+      border-radius: 25px;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
     }
     .title {
       position: absolute;
@@ -39,6 +34,7 @@ const CardStyled = styled.div`
       bottom: 20px;
     }
   }
+
   @media screen and (max-width: 768px) {
     .card {
       margin-bottom: 20px;
