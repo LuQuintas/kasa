@@ -1,20 +1,19 @@
 import { useNavigate } from "react-router";
 import styled from "styled-components";
-import { DatasLogements } from "../../../assets/Datas/Api";
-import Banner from "../../layout/Banner";
-import BannerHome from "../homePage/images/BannerHome.png";
+import datasProducts from "../../../assets/Datas/Api.json";
+import Banner from "../../reusable-ui/Banner";
+import BannerHome from "../home/images/BannerHome.png";
 import Card from "./Card";
 
 export default function Main() {
   //states
-
   const navigate = useNavigate();
 
   //comportements
 
   const handleClick = (e) => {
     e.preventDefault();
-    navigate(`Logements`);
+    navigate(`<Logement/.id}`);
   };
 
   //render
@@ -22,13 +21,14 @@ export default function Main() {
     <MainStyled>
       <Banner image={BannerHome} texte="Chez vous, partout et ailleurs" />
       <div className="container-card">
-        {DatasLogements.map((produit) => {
+        {datasProducts.map((product) => {
           return (
             <Card
               onclick={handleClick}
-              key={produit.id}
-              title={produit.title}
-              image={produit.cover}
+              key={product.id}
+              title={product.title}
+              alt={product.title}
+              image={product.cover}
             />
           );
         })}

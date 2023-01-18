@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Footer from "../../layout/Footer";
-import NavBar from "../../layout/navbar/NavBar";
+import Footer from "../../reusable-ui/Footer";
+import NavBar from "../../reusable-ui/navbar/NavBar";
 import Main from "./Main";
 
 export default function Home() {

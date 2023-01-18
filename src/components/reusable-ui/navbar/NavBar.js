@@ -16,7 +16,6 @@ const NavBarStyled = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
-  /* margin: auto; */
   max-width: 1440px;
   img {
     width: 25%;

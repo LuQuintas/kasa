@@ -5,7 +5,7 @@ export default function Card({ id, title, image, onclick }) {
     <CardStyled onClick={onclick}>
       <div className="card" id={id}>
         <div className="image">
-          <img src={image} alt="" />
+          <img src={image} alt={title} />
         </div>
         <span className="title">{title}</span>
       </div>
