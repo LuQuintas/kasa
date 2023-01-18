@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import NavBar from "../../reusable-ui/navbar/NavBar";
+import NavBar from "../../reusable-ui/NavBar";
 import Footer from "../../reusable-ui/Footer";
 
 export default function Logement() {

@@ -15,8 +15,9 @@ export default function Banner({ image, texte }) {
 const BannerStyled = styled.div`
   position: relative;
   width: 100%;
+  max-width: 1240px;
   height: 111px;
-  margin-bottom: 20px;
+  margin: 25px;
 
   img {
     position: absolute;
@@ -55,7 +56,7 @@ const BannerStyled = styled.div`
   }
 
   @media screen and (min-width: 769px) {
-    margin-top: 40px;
+    /* margin-top: 40px; */
     height: 223px;
     .containerText {
       justify-content: center;

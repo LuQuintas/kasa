@@ -1,13 +1,16 @@
 import styled from "styled-components";
-import Footer from "../../reusable-ui/Footer";
-import NavBar from "../../reusable-ui/navbar/NavBar";
+import NavBar from "../../reusable-ui/NavBar";
+import Banner from "../../reusable-ui/Banner";
+import Bannerhome from "./images/BannerHome.png";
 import Main from "./Main";
+import Footer from "../../reusable-ui/Footer";
 
 export default function Home() {
   return (
     <HomeStyled>
-      <NavBar classname="Nav" />
-      <Main classname="main" />
+      <NavBar />
+      <Banner image={Bannerhome} texte="Chez vous, partout ailleurs" />
+      <Main />
       <Footer />
     </HomeStyled>
   );
