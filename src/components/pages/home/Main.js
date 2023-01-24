@@ -6,18 +6,18 @@ import Card from "./Card";
 export default function Main() {
   const navigate = useNavigate();
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    navigate(`Logement/:id`);
+  const handleClick = (id) => {
+    navigate(`Logement/${id}`);
   };
 
   return (
     <MainStyled>
-      {datasProducts.map((product) => {
+      {datasProducts.map((product, index) => {
         return (
           <Card
-            onClick={handleClick}
-            key={product.id}
+            onClick={() => handleClick(product.id)}
+            key={index}
+            id={product.id}
             title={product.title}
             image={product.cover}
           />
