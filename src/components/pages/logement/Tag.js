@@ -8,6 +8,7 @@ const TagStyled = styled.div`
   min-width: 115px;
   height: 25px;
   border-radius: 10px;
+  letter-spacing: 0.1px;
   background-color: #ff6060;
   color: white;
   font-size: 14px;
