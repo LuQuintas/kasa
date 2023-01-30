@@ -3,7 +3,12 @@ import NavBar from "../../reusable-ui/NavBar";
 import Footer from "../../reusable-ui/Footer";
 import { useParams } from "react-router-dom";
 import datasProducts from "../../../assets//Datas/Api.json";
+// import Tag from "./Tag";
+import Collapse from "../../reusable-ui/Collapse";
 import Tag from "./Tag";
+import Host from "./Host";
+// import Info from "./Info";
+// import Host from "./Host";
 export default function Logement() {
   const idProduct = useParams();
 
@@ -12,27 +17,32 @@ export default function Logement() {
   return (
     <LogementStyled>
       <NavBar />
-      <div className="container">
-        <img src={product.pictures} alt={product.title} />
-        <div className="title-host">
+      <div className="info">
+        {/* <div> */}
+        <Host title={product.title} location={product.location} />
+        {product.tags.map((tag) => (
+          <Tag className="tags" key={tag} name={tag} />
+        ))}
+        {/* </div> */}
+        <div className="rating">
           <div>
-            <h1>{product.title}</h1>
-            <span className="location">{product.location}</span>
-          </div>
-          <div>{product.host.name}</div>
-        </div>
-        <div className="tags">
-          {product.tags.map((tags) => (
-            <Tag name={tags} />
-          ))}
-          <div className="rating">
             <span>{product.rating}</span>
+            <span>{product.host.name}</span>
+            <img src={product.host.picture} alt="" />
           </div>
         </div>
-        <div className="description">
-          <div>{product.description}</div>
-          <div>{product.equipments}</div>
-        </div>
+      </div>
+
+      <div className="description">
+        <Collapse title="Description" texte={product.description} />
+        <Collapse
+          title="Equipements"
+          texte={
+            (product.equipments.map = (equipement) => {
+              <ul key={equipement.id}>{equipement}</ul>;
+            })
+          }
+        />
       </div>
 
       <Footer />
@@ -40,58 +50,23 @@ export default function Logement() {
   );
 }
 const LogementStyled = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  margin: auto;
+  margin: 20px;
   max-width: 1240px;
-  .container {
-    /* background: red; */
+  /* .info {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    align-items: center;
-    img {
-      width: 1240px;
-      /* background: red; */
-      height: 415px;
-    }
-    h1 {
-      font-size: 36px;
-      font-weight: 500;
-      color: #ff6060;
-    }
-    .location {
-      color: #ff6060;
-      font-size: 18px;
-      margin-bottom: 23px;
-    }
-  }
-  .title-host,
-  .tag-rating,
-  .description {
-    display: flex;
-    color: white;
-    /* background: blue; */
-    width: 100%;
-    min-height: 50px;
+    flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 15px;
-    padding: 5px;
+  } */
+
+  .description {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
   }
 
-  .tags {
-    width: 100%;
-    display: flex;
-    margin-top: 15px;
-    /* justify-items: self-end; */
-    .rating {
-      text-align: right;
-      /* justify-items: center; */
-      width: 100%;
-    }
-    /* justify-content: space-around; */
+  .rating {
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* justify-content: space-between; */
   }
 `;
