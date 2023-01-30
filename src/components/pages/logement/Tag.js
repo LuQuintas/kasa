@@ -4,16 +4,16 @@ export default function Tag({ name }) {
   return <TagStyled>{name}</TagStyled>;
 }
 const TagStyled = styled.div`
-  display: flex;
-  min-width: 115px;
-  height: 25px;
-  border-radius: 10px;
-  letter-spacing: 0.1px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  min-height: 20px;
+  min-width: 90px;
+  letter-spacing: 0.5px;
   background-color: #ff6060;
   color: white;
-  font-size: 14px;
+  font-size: 10px;
   margin-right: 10px;
   justify-content: center;
-  padding: 5px 15px;
   align-items: center;
 `;

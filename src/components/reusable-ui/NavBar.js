@@ -19,11 +19,12 @@ const NavBarStyled = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 40px 100px;
-  max-width: 1240px;
+  /* margin: 40px 100px; */
+  /* margin: 20px; */
+  /* max-width: 1240px; */
   img {
-    max-width: 210px;
-    max-height: 68px;
+    min-width: 145px;
+    max-height: 47px;
   }
   a {
     text-decoration: none;

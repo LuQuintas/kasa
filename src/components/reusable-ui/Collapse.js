@@ -25,7 +25,6 @@ const CollapseStyled = styled.div`
   display: flex;
   flex-direction: column;
   color: white;
-  margin-top: 15px;
   width: 582px;
 
   .collapse {
@@ -37,6 +36,7 @@ const CollapseStyled = styled.div`
     color: #f6f6f6;
     height: 52px;
     border-radius: 10px;
+    margin-top: 26px;
     cursor: pointer;
     h2 {
       margin-left: 20px;
