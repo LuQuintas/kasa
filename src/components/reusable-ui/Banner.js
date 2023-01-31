@@ -14,11 +14,15 @@ export default function Banner({ image, texte }) {
 
 const BannerStyled = styled.div`
   position: relative;
-  width: 100%;
-  max-width: 1240px;
+  width: 335px;
+  /* width: 100%; */
   height: 111px;
-  margin: 25px;
-
+  margin-top: 15px;
+  margin-left: 20px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
   img {
     position: absolute;
     border-radius: 10px;
@@ -38,25 +42,22 @@ const BannerStyled = styled.div`
   .containerText {
     position: absolute;
     top: 0;
+    left: 20px;
     width: 100%;
     height: 100%;
     z-index: 2;
     display: flex;
-    padding-left: 20px;
+    /* padding-left: 20px; */
     align-items: center;
 
     span {
-      font-family: "Montserrat";
-      font-style: normal;
-      font-weight: 500;
-      font-size: 24px;
       color: #ffffff;
       width: 217px;
     }
   }
 
-  @media screen and (min-width: 769px) {
-    /* margin-top: 40px; */
+  /* @media screen and (min-width: 769px) {
+    margin-top: 40px;
     height: 223px;
     .containerText {
       justify-content: center;
@@ -67,5 +68,5 @@ const BannerStyled = styled.div`
         font-size: 48px;
       }
     }
-  }
+  } */
 `;

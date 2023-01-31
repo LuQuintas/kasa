@@ -11,27 +11,30 @@ export default function Card({ title, image, onClick, ...extraProps }) {
 
 const CardStyled = styled.div`
   position: relative;
-  margin: 25px;
-  width: 340px;
-  height: 340px;
+  margin-top: 20px;
+  /* width: 340px; */
+  /* height: 340px; */
+  min-width: 335px;
+  min-height: 255px;
+  font-size: 18px;
+  font-weight: 500;
   cursor: pointer;
 
   img {
     position: absolute;
-    border-radius: 25px;
+    border-radius: 10px;
     object-fit: cover;
     width: 100%;
     height: 100%;
   }
   span {
     position: absolute;
-    font-size: 18px;
     color: #ffffff;
     left: 20px;
     bottom: 20px;
   }
 
-  @media screen and (max-width: 768px) {
+  /* @media screen and (max-width: 768px) {
     margin-bottom: 20px;
     border-radius: 10px;
     width: 335px;
@@ -39,5 +42,5 @@ const CardStyled = styled.div`
     img {
       border-radius: 10px;
     }
-  }
+  } */
 `;

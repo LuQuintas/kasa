@@ -28,16 +28,16 @@ export default function Main() {
 }
 
 const MainStyled = styled.div`
-  margin-top: 25px;
+  /* margin-top: 25px; */
   max-width: 1240px;
   border-radius: 25px;
   justify-content: space-evenly;
-  padding-top: 15px;
+  /* padding-top: 15px; */
 
   display: flex;
   flex-wrap: wrap;
   /* width: 100%; */
-  background: #f6f6f6;
+  /* background: #f6f6f6; */
 
   /* @media screen and (max-width: 768px) {
     background: white;
