@@ -14,11 +14,8 @@ export default function Banner({ image, texte }) {
 
 const BannerStyled = styled.div`
   position: relative;
-  width: 335px;
-  /* width: 100%; */
   height: 111px;
-  margin-top: 15px;
-  margin-left: 20px;
+  margin: 0 20px;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
@@ -42,7 +39,6 @@ const BannerStyled = styled.div`
   .containerText {
     position: absolute;
     top: 0;
-    left: 20px;
     width: 100%;
     height: 100%;
     z-index: 2;
@@ -53,20 +49,27 @@ const BannerStyled = styled.div`
     span {
       color: #ffffff;
       width: 217px;
+      margin-left: 20px;
     }
   }
 
-  /* @media screen and (min-width: 769px) {
-    margin-top: 40px;
+  @media screen and (min-width: 1440px) {
+    margin: 40px auto;
+    max-width: 1240px;
     height: 223px;
+    span {
+      font-size: 48px;
+    }
+  }
+  @media screen and (min-width: 768px) {
     .containerText {
       justify-content: center;
       align-items: center;
       text-align: center;
       span {
         width: 100%;
-        font-size: 48px;
+        font-size: 32px;
       }
     }
-  } */
+  }
 `;

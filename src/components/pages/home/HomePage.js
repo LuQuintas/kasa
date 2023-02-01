@@ -17,10 +17,10 @@ export default function Home() {
 }
 
 const HomeStyled = styled.div`
-  /* display: flex; */
-  /* align-items: center; */
-  /* flex-direction: column; */
   /* justify-content: center; */
-  /* margin: auto; */
+  /* margin: 20px; */
   /* width: 100%; */
+  margin: auto;
+  max-width: 1440px;
+  min-width: 375px;
 `;

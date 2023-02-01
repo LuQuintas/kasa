@@ -29,6 +29,7 @@ export default function Main() {
 
 const MainStyled = styled.div`
   /* margin-top: 25px; */
+  margin: auto;
   max-width: 1240px;
   border-radius: 25px;
   justify-content: space-evenly;
@@ -37,11 +38,11 @@ const MainStyled = styled.div`
   display: flex;
   flex-wrap: wrap;
   /* width: 100%; */
-  /* background: #f6f6f6; */
+  background: white;
 
-  /* @media screen and (max-width: 768px) {
-    background: white;
+  @media screen and (min-width: 1440px) {
+    background: #f6f6f6;
     padding-top: 0;
     margin-top: 0;
-  } */
+  }
 `;

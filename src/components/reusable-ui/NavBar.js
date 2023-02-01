@@ -8,20 +8,19 @@ export default function NavBar() {
       <img src="/images/logo.png" alt="Logo de kasa" />
       <div>
         <NavLink to="/">Accueil</NavLink>
-        <NavLink to="/about"> A propos </NavLink>
+        <NavLink to="/about">A propos</NavLink>
       </div>
     </NavBarStyled>
   );
 }
 
 const NavBarStyled = styled.div`
-  width: 335px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   letter-spacing: 1px;
-  margin-top: 20px;
-  margin-left: 20px;
+  margin: 20px;
+
   img {
     min-width: 145px;
     max-height: 47px;
@@ -30,15 +29,25 @@ const NavBarStyled = styled.div`
     text-decoration: none;
     font-size: 12px;
     font-weight: 500;
-    margin-left: 20px;
+    margin-left: 25px;
     /* letter-spacing: 0.3px; */
     color: #ff6060;
     :hover,
     :focus {
       text-decoration: underline;
     }
-    /* @media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 1440px) {
+    max-width: 1240px;
+    margin: 40px auto;
+    img {
+      max-width: 210px;
+      max-height: 68px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    a {
       font-size: 24px;
-    } */
+    }
   }
 `;

@@ -18,9 +18,8 @@ const FooterStyled = styled.div`
   justify-content: space-evenly;
   background: black;
   color: white;
-  max-width: 100%;
+  max-width: 1940px;
   min-height: 209px;
-  width: 100%;
   img {
     width: 122px;
     height: 40px;
