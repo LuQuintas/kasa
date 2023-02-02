@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import arrow from "../../assets/images/Vector.png";
-export default function Collapse({ title, texte }) {
+export default function Collapse({ title, texte, className }) {
   const [arrowOpen, setArrowOpen] = useState(false);
 
   const handleClick = () => {
@@ -9,7 +9,7 @@ export default function Collapse({ title, texte }) {
   };
 
   return (
-    <CollapseStyled onClick={handleClick}>
+    <CollapseStyled onClick={handleClick} className={className}>
       <div className="collapse">
         <h2>{title}</h2>
         <img className={`arrow ${arrowOpen}`} src={arrow} alt="" />
@@ -25,9 +25,11 @@ const CollapseStyled = styled.div`
   display: flex;
   flex-direction: column;
   color: white;
-  width: 335px;
-  margin: auto;
-  font-size: 12px;
+  max-width: 100%;
+  /* min-width: 335px; */
+  max-width: 1240px;
+  margin: auto 20px;
+  /* margin: auto; */
 
   .collapse {
     z-index: 1;
@@ -37,7 +39,7 @@ const CollapseStyled = styled.div`
     background-color: #ff6060;
     color: #f6f6f6;
     min-height: 30px;
-    border-radius: 10px;
+    border-radius: 5px;
     margin-top: 15px;
     cursor: pointer;
     h2 {
@@ -52,12 +54,16 @@ const CollapseStyled = styled.div`
     display: flex;
     flex-direction: column;
     background-color: #f6f6f6;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    line-height: 18px;
     color: #ff6060;
     border-radius: 5px;
     margin-top: -10px;
     padding-top: 15px;
     .conteinerText {
-      margin: 0px 10px;
+      margin: 5px 10px;
       padding-bottom: 10px;
     }
     span {
@@ -70,6 +76,10 @@ const CollapseStyled = styled.div`
   .description.true {
     background-color: white;
   }
+  .description.false {
+    margin-bottom: 30px;
+    min-height: 145px;
+  }
 
   .arrow {
     margin-right: 8px;
@@ -78,5 +88,29 @@ const CollapseStyled = styled.div`
   }
   .arrow.true {
     transform: rotate(180deg);
+  }
+  @media screen and (min-width: 768px) {
+    margin: auto;
+    width: 70%;
+
+    .description {
+      .conteinerText {
+        margin-left: 18px;
+        span {
+          font-size: 24px;
+          font-weight: 400;
+          line-height: 35px;
+        }
+      }
+    }
+
+    .collapse {
+      height: 47px;
+      h2 {
+        margin-left: 18px;
+        font-size: 24px;
+        font-weight: 500;
+      }
+    }
   }
 `;

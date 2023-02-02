@@ -9,7 +9,7 @@ export default function About() {
   return (
     <AboutStyled>
       <NavBar />
-      <Banner image={bannerAbout} />
+      <Banner ClassName="banner" image={bannerAbout} />
       <Collapse
         title="Fiabilité"
         texte="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes."
@@ -32,5 +32,15 @@ export default function About() {
   );
 }
 const AboutStyled = styled.div`
-  height: 100%;
+  .banner {
+    max-width: 100%;
+    height: 223px;
+    max-width: 1240px;
+    @media screen and (min-width: 1024px) {
+      img,
+      .bg-dark {
+        border-radius: 25px;
+      }
+    }
+  }
 `;

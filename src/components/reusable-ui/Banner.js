@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export default function Banner({ image, texte }) {
+export default function Banner({ image, texte, ClassName }) {
   return (
-    <BannerStyled>
+    <BannerStyled className={ClassName}>
       <img src={image} alt="Bannière" />
       <div className="bg-dark"></div>
       <div className="containerText">
@@ -57,6 +57,7 @@ const BannerStyled = styled.div`
     margin: 40px auto;
     max-width: 1240px;
     height: 223px;
+
     span {
       font-size: 48px;
     }
