@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export default function Banner({ image, texte }) {
+export default function Banner({ image, texte, ClassName }) {
   return (
-    <BannerStyled>
+    <BannerStyled className={ClassName}>
       <img src={image} alt="Bannière" />
       <div className="bg-dark"></div>
       <div className="containerText">
@@ -14,10 +14,12 @@ export default function Banner({ image, texte }) {
 
 const BannerStyled = styled.div`
   position: relative;
-  width: 100%;
   height: 111px;
-  margin-bottom: 20px;
-
+  margin: 0 20px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
   img {
     position: absolute;
     border-radius: 10px;
@@ -41,29 +43,33 @@ const BannerStyled = styled.div`
     height: 100%;
     z-index: 2;
     display: flex;
-    padding-left: 20px;
+    /* padding-left: 20px; */
     align-items: center;
 
     span {
-      font-family: "Montserrat";
-      font-style: normal;
-      font-weight: 500;
-      font-size: 24px;
       color: #ffffff;
       width: 217px;
+      margin-left: 20px;
     }
   }
 
-  @media screen and (min-width: 769px) {
-    margin-top: 40px;
+  @media screen and (min-width: 1440px) {
+    margin: 40px auto;
+    max-width: 1240px;
     height: 223px;
+
+    span {
+      font-size: 48px;
+    }
+  }
+  @media screen and (min-width: 768px) {
     .containerText {
       justify-content: center;
       align-items: center;
       text-align: center;
       span {
         width: 100%;
-        font-size: 48px;
+        font-size: 32px;
       }
     }
   }
