@@ -13,7 +13,7 @@ export default function Footer() {
 const FooterStyled = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  margin-top: 40px;
   align-items: center;
   justify-content: space-evenly;
   background: black;
