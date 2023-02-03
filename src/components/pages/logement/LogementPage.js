@@ -6,29 +6,35 @@ import datasProducts from "../../../assets//Datas/Api.json";
 import Collapse from "../../reusable-ui/Collapse";
 import Tag from "./Tag";
 import Host from "./Host";
+import Carousel from "./Carousel";
+import { useState } from "react";
+import { useEffect } from "react";
 
 export default function Logement() {
   const idProduct = useParams();
-
+  const [imageSlider, setImageSlider] = useState([]);
   const product = datasProducts.find((product) => product.id === idProduct.id);
+  console.log(product.pictures);
 
+  useEffect(() => {
+    setImageSlider(product.pictures);
+  }, [setImageSlider, product.pictures]);
   const listEquipment = product.equipments.map((equipment) => (
     <span key={equipment}>{equipment}</span>
   ));
-  console.log(product);
-
   return (
     <LogementStyled>
       <NavBar />
-      <div className="carrousel">
-        {product.pictures.map((pictures) => (
-          <img key={pictures.id} src={pictures} alt="" />
-        ))}
-      </div>
+      <Carousel
+        imageSlider={imageSlider}
+        img={product.pictures}
+        alt={product.title}
+      />
+
       <div className="info">
         <Host title={product.title} location={product.location} />
-        {product.tags.map((tag) => (
-          <Tag className="tags" key={tag} name={tag} />
+        {product.tags.map((tags) => (
+          <Tag className="tags" key={tags} name={tags} />
         ))}
       </div>
       <div className="rating">
