@@ -7,30 +7,17 @@ import Collapse from "../../reusable-ui/Collapse";
 import Tag from "./Tag";
 import Host from "./Host";
 import Carousel from "./Carousel";
-import { useState } from "react";
-import { useEffect } from "react";
 
 export default function Logement() {
   const idProduct = useParams();
-  const [imageSlider, setImageSlider] = useState([]);
   const product = datasProducts.find((product) => product.id === idProduct.id);
-  console.log(product.pictures);
-
-  useEffect(() => {
-    setImageSlider(product.pictures);
-  }, [setImageSlider, product.pictures]);
   const listEquipment = product.equipments.map((equipment) => (
     <span key={equipment}>{equipment}</span>
   ));
   return (
     <LogementStyled>
       <NavBar />
-      <Carousel
-        imageSlider={imageSlider}
-        img={product.pictures}
-        alt={product.title}
-      />
-
+      <Carousel slides={product.pictures} />
       <div className="info">
         <Host title={product.title} location={product.location} />
         {product.tags.map((tags) => (
@@ -46,8 +33,11 @@ export default function Logement() {
           <img src={product.host.picture} alt="" />
         </div>
       </div>
-      <Collapse title="Description" texte={product.description} />
-      <Collapse title="Equipements" texte={listEquipment} />
+      <div className="collapse_container">
+        <Collapse title="Description" texte={product.description} />
+
+        <Collapse title="Equipements" texte={listEquipment} />
+      </div>
       <Footer />
     </LogementStyled>
   );
@@ -61,9 +51,12 @@ const LogementStyled = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
   } */
-
+  .collapse_container {
+    display: flex;
+    flex-wrap: wrap;
+  }
   .collapse {
-    /* width: 335px; */
+    min-width: 335px;
     /* margin: 20px; */
     /* min-height: 30px; */
     /* display: inline-flex; */
