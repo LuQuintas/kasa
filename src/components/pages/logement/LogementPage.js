@@ -4,29 +4,39 @@ import Footer from "../../reusable-ui/Footer";
 import { useParams } from "react-router-dom";
 import datasProducts from "../../../assets//Datas/Api.json";
 import Collapse from "../../reusable-ui/Collapse";
+import { VscStarFull } from "react-icons/vsc";
 import Tag from "./Tag";
-import Host from "./Host";
+import Info from "./Info";
 import Carousel from "./Carousel";
 
 export default function Logement() {
   const idProduct = useParams();
   const product = datasProducts.find((product) => product.id === idProduct.id);
+
   const listEquipment = product.equipments.map((equipment) => (
     <span key={equipment}>{equipment}</span>
   ));
+
+  const stars = [1, 2, 3, 4, 5];
+
   return (
     <LogementStyled>
       <NavBar />
       <Carousel slides={product.pictures} />
       <div className="info">
-        <Host title={product.title} location={product.location} />
+        <Info title={product.title} location={product.location} />
         {product.tags.map((tags) => (
           <Tag className="tags" key={tags} name={tags} />
         ))}
       </div>
       <div className="rating">
-        <div>
-          <span>{product.rating}</span>
+        <div className="etoile">
+          {stars.map((rating) => (
+            <VscStarFull
+              key={rating}
+              className={product.rating >= rating ? "color" : "grey"}
+            />
+          ))}
         </div>
         <div className="hostName">
           <span>{product.host.name}</span>
@@ -35,7 +45,6 @@ export default function Logement() {
       </div>
       <div className="collapse_container">
         <Collapse title="Description" texte={product.description} />
-
         <Collapse title="Equipements" texte={listEquipment} />
       </div>
       <Footer />
@@ -43,33 +52,23 @@ export default function Logement() {
   );
 }
 const LogementStyled = styled.div`
-  /* margin: auto; 
-  width: 100%; 
-  height: 100%; */
-
-  .collapse_container {
-    /* display: flex; */
-    /* flex-wrap: wrap; */
+  .etoile {
+    font-size: 18px;
+    .color {
+      margin-right: 5px;
+      color: #ff6060;
+    }
+    .grey {
+      color: #e3e3e3;
+    }
   }
   .collapse {
-    /* min-width: 335px; */
-    /* margin: 20px; */
-    /* min-height: 30px; */
-    /* display: inline-flex; */
     width: 100%;
   }
   .info {
     margin-left: 20px;
   }
-  .carrousel {
-    margin: auto;
-    img {
-      margin-left: 20px;
-      width: 335px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-  }
+
   .rating {
     display: flex;
     align-items: center;
