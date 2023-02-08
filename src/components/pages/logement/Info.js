@@ -1,14 +1,19 @@
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import datasProducts from "../../../assets//Datas/Api.json";
 
-export default function Info({ title, location }) {
+export default function Info() {
+  const idProduct = useParams();
+  const product = datasProducts.find((product) => product.id === idProduct.id);
+
   return (
-    <HostStyled>
-      <h2>{title}</h2>
-      <span>{location}</span>
-    </HostStyled>
+    <InfoStyled>
+      <h2>{product.title}</h2>
+      <span>{product.location}</span>
+    </InfoStyled>
   );
 }
-const HostStyled = styled.div`
+const InfoStyled = styled.div`
   width: 100%;
   color: #ff6060;
   letter-spacing: 1px;

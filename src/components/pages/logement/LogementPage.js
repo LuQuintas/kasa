@@ -4,10 +4,11 @@ import Footer from "../../reusable-ui/Footer";
 import { useParams } from "react-router-dom";
 import datasProducts from "../../../assets//Datas/Api.json";
 import Collapse from "../../reusable-ui/Collapse";
-import { VscStarFull } from "react-icons/vsc";
 import Tag from "./Tag";
 import Info from "./Info";
 import Carousel from "./Carousel";
+import Rating from "./Rating";
+import Host from "./Host";
 
 export default function Logement() {
   const idProduct = useParams();
@@ -17,31 +18,17 @@ export default function Logement() {
     <span key={equipment}>{equipment}</span>
   ));
 
-  const stars = [1, 2, 3, 4, 5];
-
   return (
     <LogementStyled>
       <NavBar />
       <Carousel slides={product.pictures} />
       <div className="info">
-        <Info title={product.title} location={product.location} />
-        {product.tags.map((tags) => (
-          <Tag className="tags" key={tags} name={tags} />
-        ))}
+        <Info />
+        <Tag />
       </div>
       <div className="rating">
-        <div className="etoile">
-          {stars.map((rating) => (
-            <VscStarFull
-              key={rating}
-              className={product.rating >= rating ? "color" : "grey"}
-            />
-          ))}
-        </div>
-        <div className="hostName">
-          <span>{product.host.name}</span>
-          <img src={product.host.picture} alt="" />
-        </div>
+        <Rating />
+        <Host />
       </div>
       <div className="collapse_container">
         <Collapse title="Description" texte={product.description} />
@@ -52,16 +39,6 @@ export default function Logement() {
   );
 }
 const LogementStyled = styled.div`
-  .etoile {
-    font-size: 18px;
-    .color {
-      margin-right: 5px;
-      color: #ff6060;
-    }
-    .grey {
-      color: #e3e3e3;
-    }
-  }
   .collapse {
     width: 100%;
   }
@@ -74,9 +51,7 @@ const LogementStyled = styled.div`
     align-items: center;
     justify-content: space-between;
     font-size: 12px;
-    margin-top: 16px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 20px;
     img {
       border-radius: 50%;
       height: 32px;
@@ -87,12 +62,6 @@ const LogementStyled = styled.div`
       color: #ff6060;
       width: min-content;
       text-align: right;
-    }
-    .hostName {
-      display: flex;
-      text-align: center;
-      align-items: center;
-      justify-content: center;
     }
   }
 `;

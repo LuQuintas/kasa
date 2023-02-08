@@ -40,7 +40,6 @@ const CollapseStyled = styled.div`
     color: #f6f6f6;
     min-height: 30px;
     border-radius: 5px;
-    margin-top: 15px;
     cursor: pointer;
     h2 {
       font-weight: 500;
