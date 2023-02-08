@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import arrow from "../../assets/images/Vector.png";
+import arrow from "../../assets/images/ArrowCollapse.svg";
 export default function Collapse({ title, texte, className }) {
   const [arrowOpen, setArrowOpen] = useState(false);
 

@@ -5,7 +5,7 @@ import styled from "styled-components";
 export default function NavBar() {
   return (
     <NavBarStyled>
-      <img src="/images/logo.png" alt="Logo de kasa" />
+      <img src="/images/logo.svg" alt="Logo de kasa" />
       <div>
         <NavLink to="/">Accueil</NavLink>
         <NavLink to="/about">A propos</NavLink>
@@ -22,8 +22,8 @@ const NavBarStyled = styled.div`
   margin: 20px;
 
   img {
-    min-width: 145px;
-    max-height: 47px;
+    width: 145px;
+    height: 47px;
   }
   a {
     text-decoration: none;
@@ -40,14 +40,14 @@ const NavBarStyled = styled.div`
   @media screen and (min-width: 1440px) {
     max-width: 1240px;
     margin: 40px auto;
-    img {
-      max-width: 210px;
-      max-height: 68px;
-    }
   }
   @media screen and (min-width: 768px) {
     a {
       font-size: 24px;
+    }
+    img {
+      width: 210px;
+      height: 68px;
     }
   }
 `;

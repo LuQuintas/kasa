@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import LogoFooter from "../../assets/images/LogoFooter.png";
+import LogoFooter from "../../assets/images/LogoFooter.svg";
 
 export default function Footer() {
   return (
