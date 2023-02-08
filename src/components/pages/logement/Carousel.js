@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import ArrowBackSlide from "../../../assets/images/ArrowLeftSlide.svg";
+import ArrowForwardSlide from "../../../assets/images/ArrowRightSlide.svg";
 
 export default function Carousel({ slides }) {
   const [currImg, setCurrImg] = useState(0);
@@ -19,11 +20,11 @@ export default function Carousel({ slides }) {
     <CarouselStyled>
       <div className="carouselInner">
         <div className="left" onClick={prevSlide}>
-          <ArrowForwardIosIcon className="arrow_left" />
+          <img className="arrow" src={ArrowBackSlide} alt="" />
         </div>
         <img src={slides[currImg]} alt="" />
         <div className="right" onClick={nextSlide}>
-          <ArrowForwardIosIcon className="arrow_right" />
+          <img className="arrow" src={ArrowForwardSlide} alt="" />
         </div>
       </div>
     </CarouselStyled>
@@ -31,11 +32,11 @@ export default function Carousel({ slides }) {
 }
 const CarouselStyled = styled.div`
   height: 255px;
-  max-width: 1240px;
 
   min-width: 335px;
   margin: 20px auto;
   .carouselInner {
+    max-width: 1240px;
     position: relative;
     justify-content: space-between;
     display: flex;
@@ -50,27 +51,31 @@ const CarouselStyled = styled.div`
       height: 100%;
       object-fit: cover;
     }
-    .arrow_left {
-      position: absolute;
-      color: white;
-      top: 45%;
-      left: 5%;
-      transform: rotate(180deg);
+    .arrow {
+      width: 1em;
+      height: 1em;
     }
-    .arrow_right {
-      position: absolute;
-      top: 45%;
-      color: white;
-      right: 5%;
-    }
+
     .left,
     .right {
-      position: relative;
       z-index: 1;
+      justify-content: center;
+      align-items: center;
       display: flex;
       height: 100%;
       width: 40px;
       cursor: pointer;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    height: 415px;
+    /* span {
+      font-size: 48px;
+    } */
+  }
+  @media screen and (min-width: 1440px) {
+    .carouselInner {
+      margin: auto;
     }
   }
 `;

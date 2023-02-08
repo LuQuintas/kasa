@@ -43,24 +43,20 @@ export default function Logement() {
   );
 }
 const LogementStyled = styled.div`
-  /* margin: auto; */
-  /* width: 100%; */
-  /* height: 100%; */
-  /* .info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  } */
+  /* margin: auto; 
+  width: 100%; 
+  height: 100%; */
+
   .collapse_container {
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
   }
   .collapse {
-    min-width: 335px;
+    /* min-width: 335px; */
     /* margin: 20px; */
     /* min-height: 30px; */
     /* display: inline-flex; */
-    /* width: 100%; */
+    width: 100%;
   }
   .info {
     margin-left: 20px;
