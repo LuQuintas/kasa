@@ -18,4 +18,5 @@ export default function Home() {
 
 const HomeStyled = styled.div`
   max-width: 1440px;
+  margin: auto;
 `;
