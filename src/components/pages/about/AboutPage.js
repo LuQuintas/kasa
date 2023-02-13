@@ -2,7 +2,7 @@ import Banner from "../../reusable-ui/Banner";
 import Collapse from "../../reusable-ui/Collapse";
 import Footer from "../../reusable-ui/Footer";
 import NavBar from "../../reusable-ui/NavBar";
-import BannerAbout from "../../../assets/images/BannerAbout.svg";
+import BannerAbout from "../../../assets/images/BannerAbout.png";
 import styled from "styled-components";
 import infoAbout from "../../../assets/Datas/infoAbout.json";
 
@@ -11,9 +11,15 @@ export default function About() {
     <AboutStyled>
       <NavBar />
       <Banner ClassName="banner" image={BannerAbout} />
-      {infoAbout.map((info) => (
-        <Collapse title={info.title} texte={info.description} />
-      ))}
+      <div className="container-collapse">
+        {infoAbout.map((info) => (
+          <Collapse
+            ClassName="collapse"
+            title={info.title}
+            texte={info.description}
+          />
+        ))}
+      </div>
       <Footer />
     </AboutStyled>
   );
@@ -23,12 +29,21 @@ const AboutStyled = styled.div`
     max-width: 100%;
     height: 223px;
     max-width: 1240px;
+
     @media screen and (min-width: 1024px) {
       margin-bottom: 30px;
       img,
       .bg-dark {
         border-radius: 25px;
       }
+    }
+  }
+  .container-collapse {
+    margin: 20px 20px 0 20px;
+    @media screen and (min-width: 768px) {
+      margin: auto;
+      margin-top: 40px;
+      width: 70%;
     }
   }
 `;

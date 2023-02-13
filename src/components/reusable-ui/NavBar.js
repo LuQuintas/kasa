@@ -41,6 +41,10 @@ const NavBarStyled = styled.div`
     max-width: 1240px;
     margin: 40px auto;
   }
+  /* @media screen and (min-width: 1024px) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  } */
   @media screen and (min-width: 768px) {
     a {
       font-size: 24px;

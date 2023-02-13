@@ -43,9 +43,7 @@ const BannerStyled = styled.div`
     height: 100%;
     z-index: 2;
     display: flex;
-    /* padding-left: 20px; */
     align-items: center;
-
     span {
       color: #ffffff;
       width: 217px;
@@ -68,7 +66,6 @@ const BannerStyled = styled.div`
     }
   }
   @media screen and (min-width: 768px) {
-    /* margin: 20px; */
     .containerText {
       justify-content: center;
       align-items: center;

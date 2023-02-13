@@ -22,46 +22,82 @@ export default function Logement() {
     <LogementStyled>
       <NavBar />
       <Carousel slides={product.pictures} />
-      <div className="info">
-        <Info />
-        <Tag />
+      <div className="info-rating">
+        <div className="info">
+          <Info />
+          <Tag className="tag" />
+        </div>
+        <div className="rating">
+          <Rating />
+          <Host />
+        </div>
       </div>
-      <div className="rating">
-        <Rating />
-        <Host />
-      </div>
-      <div className="collapse_container">
-        <Collapse title="Description" texte={product.description} />
-        <Collapse title="Equipements" texte={listEquipment} />
+      <div className="collapse-container">
+        <Collapse
+          className="collapse"
+          title="Description"
+          texte={product.description}
+        />
+        <Collapse
+          className="collapse"
+          title="Equipements"
+          texte={listEquipment}
+        />
       </div>
       <Footer />
     </LogementStyled>
   );
 }
 const LogementStyled = styled.div`
-  .collapse {
-    width: 100%;
+  .info-rating {
+    .rating {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 10px 20px;
+    }
   }
-  .info {
-    margin-left: 20px;
+  .collapse-container {
+    margin: 20px;
   }
 
-  .rating {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 12px;
-    margin: 20px;
-    img {
-      border-radius: 50%;
-      height: 32px;
-      width: 32px;
+  @media screen and (min-width: 1024px) {
+    .info-rating {
+      max-width: 1240px;
+      display: flex;
+      justify-content: space-between;
+      margin: 15px auto;
+      .rating {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-evenly;
+        align-items: flex-end;
+        img {
+          height: 64px;
+          width: 64px;
+        }
+        span {
+          font-size: 18px;
+        }
+      }
     }
-    span {
-      margin-right: 10px;
-      color: #ff6060;
-      width: min-content;
-      text-align: right;
+  }
+  @media screen and (min-width: 1440px) {
+    .info-rating {
+      .rating {
+        margin: 0;
+      }
+    }
+
+    .collapse-container {
+      margin: auto;
+      width: 1240px;
+      justify-content: space-between;
+      display: flex;
+      flex-wrap: wrap;
+      .collapse {
+        width: 582px;
+      }
     }
   }
 `;

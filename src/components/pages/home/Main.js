@@ -39,8 +39,6 @@ const MainStyled = styled.div`
 
   @media screen and (min-width: 1440px) {
     background: #f6f6f6;
-    /* padding-top: 0;
-    margin-top: 0; */
   }
   @media screen and (min-width: 768px) {
     margin: 15px auto;

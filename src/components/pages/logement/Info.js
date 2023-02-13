@@ -14,11 +14,9 @@ export default function Info() {
   );
 }
 const InfoStyled = styled.div`
-  width: 100%;
   color: #ff6060;
   letter-spacing: 1px;
-  line-height: 140%;
-  margin-bottom: 10px;
+  margin: 10px 20px;
   h2 {
     font-weight: 500;
     font-size: 18px;
@@ -26,5 +24,17 @@ const InfoStyled = styled.div`
   }
   span {
     font-size: 14px;
+  }
+  @media screen and (min-width: 1024px) {
+    h2 {
+      font-size: 36px;
+      line-height: 50px;
+    }
+    span {
+      font-size: 18px;
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    margin: 10px auto;
   }
 `;

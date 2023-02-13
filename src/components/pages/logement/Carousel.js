@@ -20,11 +20,11 @@ export default function Carousel({ slides }) {
     <CarouselStyled>
       <div className="carouselInner">
         <div className="left" onClick={prevSlide}>
-          <img className="arrow" src={ArrowBackSlide} alt="" />
+          <img className="arrow arrow_left" src={ArrowBackSlide} alt="" />
         </div>
         <img src={slides[currImg]} alt="" />
         <div className="right" onClick={nextSlide}>
-          <img className="arrow" src={ArrowForwardSlide} alt="" />
+          <img className="arrow arrow_right" src={ArrowForwardSlide} alt="" />
         </div>
         <div className="bulletpoints">
           <span>
@@ -38,8 +38,7 @@ export default function Carousel({ slides }) {
 const CarouselStyled = styled.div`
   height: 255px;
   min-width: 335px;
-  margin: 20px auto;
-
+  font-size: 14px;
   .carouselInner {
     max-width: 1240px;
     position: relative;
@@ -56,8 +55,8 @@ const CarouselStyled = styled.div`
       object-fit: cover;
     }
     .arrow {
-      width: 1em;
-      height: 1em;
+      width: 12px;
+      height: 20px;
     }
     .left,
     .right {
@@ -66,18 +65,37 @@ const CarouselStyled = styled.div`
       align-items: center;
       display: flex;
       height: 100%;
-      width: 40px;
+      width: 10%;
       cursor: pointer;
     }
     .bulletpoints {
       color: #ffffff;
       position: absolute;
       bottom: 5%;
-      left: 45%;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
   @media screen and (min-width: 768px) {
+    font-size: 18px;
     height: 415px;
+    .carouselInner {
+      .arrow {
+        width: 22px;
+        height: 40px;
+      }
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .carouselInner {
+      img {
+        border-radius: 25px;
+      }
+      .arrow {
+        width: 45px;
+        height: 80px;
+      }
+    }
   }
   @media screen and (min-width: 1440px) {
     .carouselInner {

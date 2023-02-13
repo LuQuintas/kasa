@@ -17,4 +17,17 @@ const HostStyled = styled.div`
   text-align: center;
   align-items: center;
   justify-content: center;
+  font-size: 12px;
+
+  img {
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+  }
+  span {
+    margin-right: 10px;
+    color: #ff6060;
+    width: min-content;
+    text-align: right;
+  }
 `;

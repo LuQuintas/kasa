@@ -29,4 +29,7 @@ const RatingStyled = styled.div`
   .grey {
     color: #e3e3e3;
   }
+  @media screen and (min-width: 1024px) {
+    font-size: 30px;
+  }
 `;
