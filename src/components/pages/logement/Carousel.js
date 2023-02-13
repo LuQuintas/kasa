@@ -20,16 +20,22 @@ export default function Carousel({ slides }) {
     <CarouselStyled>
       <div className="carouselInner">
         <div className="left" onClick={prevSlide}>
-          <img className="arrow arrow_left" src={ArrowBackSlide} alt="" />
+          {slides.length > 1 && (
+            <img className="arrow arrow_left" src={ArrowBackSlide} alt="" />
+          )}
         </div>
         <img src={slides[currImg]} alt="" />
         <div className="right" onClick={nextSlide}>
-          <img className="arrow arrow_right" src={ArrowForwardSlide} alt="" />
+          {slides.length > 1 && (
+            <img className="arrow arrow_right" src={ArrowForwardSlide} alt="" />
+          )}
         </div>
         <div className="bulletpoints">
-          <span>
-            {currImg + 1}/{slides.length}
-          </span>
+          {slides.length > 1 && (
+            <span>
+              {currImg + 1}/{slides.length}
+            </span>
+          )}
         </div>
       </div>
     </CarouselStyled>
