@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import NavBar from "../../reusable-ui/NavBar";
 import Footer from "../../reusable-ui/Footer";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import datasProducts from "../../../assets//Datas/Api.json";
+
 import Collapse from "../../reusable-ui/Collapse";
 import Tag from "./Tag";
 import Info from "./Info";
@@ -14,14 +15,12 @@ export default function Logement() {
   const idProduct = useParams();
   const product = datasProducts.find((product) => product.id === idProduct.id);
 
-  const listEquipment = product.equipments.map((equipment) => (
-    <span key={equipment}>{equipment}</span>
-  ));
-
-  return (
+  return product === undefined ? (
+    <Navigate to="*" />
+  ) : (
     <LogementStyled>
-      <NavBar />
-      <Carousel slides={product.pictures} />
+      <NavBar className="navbar" />
+      <Carousel slides={product.pictures} alt={product.title} />
       <div className="info-rating">
         <div className="info">
           <Info />
@@ -41,13 +40,16 @@ export default function Logement() {
         <Collapse
           className="collapse"
           title="Equipements"
-          texte={listEquipment}
+          texte={product.equipments.map((equipment) => (
+            <li key={equipment}>{equipment}</li>
+          ))}
         />
       </div>
       <Footer />
     </LogementStyled>
   );
 }
+
 const LogementStyled = styled.div`
   .info-rating {
     .rating {
@@ -59,6 +61,10 @@ const LogementStyled = styled.div`
   }
   .collapse-container {
     margin: 20px;
+    li {
+      margin-top: 5px;
+      list-style: none;
+    }
   }
 
   @media screen and (min-width: 1024px) {
@@ -81,14 +87,19 @@ const LogementStyled = styled.div`
         }
       }
     }
+    .collapse {
+      span {
+        margin-left: 8px;
+      }
+    }
   }
+
   @media screen and (min-width: 1440px) {
     .info-rating {
       .rating {
         margin: 0;
       }
     }
-
     .collapse-container {
       margin: auto;
       width: 1240px;
