@@ -12,9 +12,7 @@ export default function ErrorPage() {
         <span>"Oups ! La page que vous demandez n'existe pas ."</span>
         <NavLink to="/"> Retourner sur la page d'accueil</NavLink>
       </div>
-      <Footer />
-
-      {/* <Footer /> */}
+      <Footer className="footer" />
     </ErrorStyled>
   );
 }

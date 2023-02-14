@@ -49,7 +49,6 @@ const CollapseStyled = styled.div`
       margin-left: 12px;
     }
   }
-
   .description {
     display: flex;
     flex-direction: column;
@@ -73,7 +72,6 @@ const CollapseStyled = styled.div`
       flex-direction: column;
     }
   }
-
   .description.true {
     background-color: white;
   }
@@ -103,7 +101,6 @@ const CollapseStyled = styled.div`
         margin-right: 18px;
       }
     }
-
     .description {
       span {
         font-size: 18px;

@@ -3,9 +3,9 @@ import styled from "styled-components";
 import ArrowBackSlide from "../../../assets/images/ArrowLeftSlide.svg";
 import ArrowForwardSlide from "../../../assets/images/ArrowRightSlide.svg";
 
-export default function Carousel({ slides }) {
+export default function Carousel({ slides, alt }) {
   const [currImg, setCurrImg] = useState(0);
-
+  console.log(slides);
   const prevSlide = () => {
     const firstSlide = currImg === 0;
     const newImage = firstSlide ? slides.length - 1 : currImg - 1;
@@ -24,7 +24,7 @@ export default function Carousel({ slides }) {
             <img className="arrow arrow_left" src={ArrowBackSlide} alt="" />
           )}
         </div>
-        <img src={slides[currImg]} alt="" />
+        <img src={slides[currImg]} alt={alt} />
         <div className="right" onClick={nextSlide}>
           {slides.length > 1 && (
             <img className="arrow arrow_right" src={ArrowForwardSlide} alt="" />

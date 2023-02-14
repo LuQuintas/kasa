@@ -12,9 +12,10 @@ export default function About() {
       <NavBar />
       <Banner ClassName="banner" image={BannerAbout} />
       <div className="container-collapse">
-        {infoAbout.map((info) => (
+        {infoAbout.map((info, index) => (
           <Collapse
             ClassName="collapse"
+            key={index}
             title={info.title}
             texte={info.description}
           />
@@ -25,11 +26,12 @@ export default function About() {
   );
 }
 const AboutStyled = styled.div`
+  margin: auto;
+
   .banner {
     max-width: 100%;
     height: 223px;
     max-width: 1240px;
-
     @media screen and (min-width: 1024px) {
       margin-bottom: 30px;
       img,
@@ -38,12 +40,15 @@ const AboutStyled = styled.div`
       }
     }
   }
+
   .container-collapse {
+    max-width: 1240px;
     margin: 20px 20px 0 20px;
     @media screen and (min-width: 768px) {
       margin: auto;
       margin-top: 40px;
-      width: 70%;
+      margin-bottom: 30px;
+      max-width: 63%;
     }
   }
 `;

@@ -18,7 +18,7 @@ const FooterStyled = styled.div`
   background: black;
   color: white;
   width: 100%;
-  min-height: 209px;
+  min-height: 212px;
   img {
     width: 122px;
     height: 40px;
