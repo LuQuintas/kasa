@@ -1,4 +1,4 @@
-![Logo](https://raw.githubusercontent.com/LuQuintas/kasa/main/public/images/logo.png)
+![Logo](https://raw.githubusercontent.com/LuQuintas/kasa/main/public/images/logo.svg)
 
 # Projet kasa : Front-end - Openclassrooms
 
