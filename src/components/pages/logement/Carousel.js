@@ -5,7 +5,7 @@ import ArrowForwardSlide from "../../../assets/images/ArrowRightSlide.svg";
 
 export default function Carousel({ slides, alt }) {
   const [currImg, setCurrImg] = useState(0);
-  console.log(slides);
+
   const prevSlide = () => {
     const firstSlide = currImg === 0;
     const newImage = firstSlide ? slides.length - 1 : currImg - 1;
@@ -16,6 +16,7 @@ export default function Carousel({ slides, alt }) {
     const newImage = lastSlide ? 0 : currImg + 1;
     setCurrImg(newImage);
   };
+
   return (
     <CarouselStyled>
       <div className="carouselInner">
