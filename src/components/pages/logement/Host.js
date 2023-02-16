@@ -1,25 +1,33 @@
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import datasProducts from "../../../assets//Datas/Api.json";
 
-export default function Host({ title, location }) {
+export default function Host() {
+  const idProduct = useParams();
+  const product = datasProducts.find((product) => product.id === idProduct.id);
   return (
-    <HostStyled>
-      <h2>{title}</h2>
-      <span>{location}</span>
+    <HostStyled className="hostName">
+      <span>{product.host.name}</span>
+      <img src={product.host.picture} alt="" />
     </HostStyled>
   );
 }
 const HostStyled = styled.div`
-  width: 100%;
-  color: #ff6060;
-  letter-spacing: 1px;
-  line-height: 140%;
-  margin-bottom: 10px;
-  h2 {
-    font-weight: 500;
-    font-size: 18px;
-    margin-bottom: 5px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+
+  img {
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
   }
   span {
-    font-size: 14px;
+    margin-right: 10px;
+    color: #ff6060;
+    width: min-content;
+    text-align: right;
   }
 `;

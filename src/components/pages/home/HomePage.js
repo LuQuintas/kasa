@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import NavBar from "../../reusable-ui/NavBar";
 import Banner from "../../reusable-ui/Banner";
-import Bannerhome from "./images/BannerHome.png";
+import Bannerhome from "../../../assets/images/BannerHome.png";
 import Main from "./Main";
 import Footer from "../../reusable-ui/Footer";
 
@@ -17,10 +17,6 @@ export default function Home() {
 }
 
 const HomeStyled = styled.div`
-  /* justify-content: center; */
-  /* margin: 20px; */
-  /* width: 100%; */
   margin: auto;
-  max-width: 1440px;
-  min-width: 375px;
+  height: 100%;
 `;

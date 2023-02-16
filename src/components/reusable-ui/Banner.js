@@ -43,9 +43,7 @@ const BannerStyled = styled.div`
     height: 100%;
     z-index: 2;
     display: flex;
-    /* padding-left: 20px; */
     align-items: center;
-
     span {
       color: #ffffff;
       width: 217px;
@@ -54,10 +52,15 @@ const BannerStyled = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
-    margin: 40px auto;
     max-width: 1240px;
     height: 223px;
-
+    margin: 30px auto;
+    span {
+      font-size: 48px;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    height: 223px;
     span {
       font-size: 48px;
     }

@@ -5,10 +5,16 @@ import styled from "styled-components";
 export default function NavBar() {
   return (
     <NavBarStyled>
-      <img src="/images/logo.png" alt="Logo de kasa" />
+      <NavLink to="/">
+        <img src="/images/logo.svg" alt="Logo de kasa" />
+      </NavLink>
       <div>
-        <NavLink to="/">Accueil</NavLink>
-        <NavLink to="/about">A propos</NavLink>
+        <NavLink className="link" to="/">
+          Accueil
+        </NavLink>
+        <NavLink className="link" to="/about">
+          A propos
+        </NavLink>
       </div>
     </NavBarStyled>
   );
@@ -22,32 +28,36 @@ const NavBarStyled = styled.div`
   margin: 20px;
 
   img {
-    min-width: 145px;
-    max-height: 47px;
+    width: 145px;
+    height: 47px;
   }
-  a {
-    text-decoration: none;
+  .link {
+    text-decoration: #ff6060;
     font-size: 12px;
     font-weight: 500;
     margin-left: 25px;
-    /* letter-spacing: 0.3px; */
     color: #ff6060;
-    :hover,
-    :focus {
-      text-decoration: underline;
+    &.active {
+      border-bottom: 2px solid #ff6060;
+      padding-bottom: 2px;
     }
   }
+
   @media screen and (min-width: 1440px) {
     max-width: 1240px;
     margin: 40px auto;
-    img {
-      max-width: 210px;
-      max-height: 68px;
-    }
   }
+  /* @media screen and (min-width: 1024px) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  } */
   @media screen and (min-width: 768px) {
-    a {
+    .link {
       font-size: 24px;
+    }
+    img {
+      width: 210px;
+      height: 68px;
     }
   }
 `;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import LogoFooter from "../../assets/images/LogoFooter.png";
+import LogoFooter from "../../assets/images/LogoFooter.svg";
 
 export default function Footer() {
   return (
@@ -13,13 +13,12 @@ export default function Footer() {
 const FooterStyled = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
   align-items: center;
   justify-content: space-evenly;
   background: black;
   color: white;
-  max-width: 1940px;
-  min-height: 209px;
+  width: 100%;
+  min-height: 212px;
   img {
     width: 122px;
     height: 40px;
